@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="爆炸">
-      <change afterPath="$PROJECT_DIR$/src/client/ImageUtil.java" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="让敌方坦克随机动并且随机射出子弹，在被击中后爆炸。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Explode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689643279068</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="让敌方坦克随机动并且随机射出子弹，在被击中后爆炸。">
+      <created>1689648867671</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689648867671</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +123,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="敌人坦克可以被打死" />
     <MESSAGE value="爆炸" />
-    <option name="LAST_COMMIT_MESSAGE" value="爆炸" />
+    <MESSAGE value="让敌方坦克随机动并且随机射出子弹，在被击中后爆炸。" />
+    <option name="LAST_COMMIT_MESSAGE" value="让敌方坦克随机动并且随机射出子弹，在被击中后爆炸。" />
   </component>
 </project>
