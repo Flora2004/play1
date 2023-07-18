@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力">
-      <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/PropertyMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\angel\Desktop\java\javalearning\play1\src\client" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="client" />
       <recent name="" />
@@ -122,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689658755646</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力">
+      <created>1689658816314</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689658816314</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
