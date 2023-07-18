@@ -38,14 +38,14 @@ public class Tank {
         rect.width= WIDTH;
         rect.height=HEIGHT;
 
-        if(group==Group.GOOD) {
+        if(group==Group.GOOD) {//设置子弹的发射策略
             String goodFSName=(String) PropertyMgr.get("goodFS");
             try {
                 fs=(FireStrategy) Class.forName(goodFSName).getDeclaredConstructor().newInstance();//把名字代表的名字load到内存
             }catch (Exception e){
                 e.printStackTrace();
             }
-        } else if(group==Group.BAD) {
+        } else if(group==Group.BAD) {//设置子弹的发射策略
             String badFSName=(String) PropertyMgr.get("badFS");
             try {
                 fs=(FireStrategy) Class.forName(badFSName).getDeclaredConstructor().newInstance();//把名字代表的名字load到内存
