@@ -27,4 +27,6 @@ public class PropertyMgr {
         return props.get(key);
     }
 
+    //int getInt(key)
+    //getString(key)
 }

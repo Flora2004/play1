@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力">
-      <change afterPath="$PROJECT_DIR$/src/client/PropertyMgr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/config" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="加入配置文件，让程序更简单">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/PropertyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/PropertyMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689658816314</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="加入配置文件，让程序更简单">
+      <created>1689660420143</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689660420143</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +174,7 @@
     <MESSAGE value="好的坦克和坏的坦克区分开" />
     <MESSAGE value="boundsCheck()" />
     <MESSAGE value="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力" />
+    <MESSAGE value="加入配置文件，让程序更简单" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入配置文件，让程序更简单" />
   </component>
 </project>
