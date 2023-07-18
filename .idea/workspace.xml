@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Dir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/ResourceMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletL.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletU.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankL.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankU.gif" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SgCJJmdbKRwBqbGQE4GI3Em18p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/angel/Desktop/PolyWar-master&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="" />
+      <created>1689558765798</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689558765798</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/client/TankFrame.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
