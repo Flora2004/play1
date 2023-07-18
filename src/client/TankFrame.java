@@ -16,10 +16,11 @@ import java.util.List;
  * Time: 13:40
  */
 public class TankFrame extends Frame{
-    Tank myTank=new Tank(200,400,Dir.DOWN,this);
+    Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
     List<Bullet>bullets=new ArrayList<>();//子弹
-    List<Tank>tanks=new ArrayList<>();
-    Bullet b=new Bullet(300,300,Dir.DOWN,this);
+    List<Tank>tanks=new ArrayList<>();//自动生成的敌方坦克
+    Explode e=new Explode(100,100,this);
+    Bullet b=new Bullet(300,300,Dir.DOWN,Group.GOOD,this);
     static final int GAME_WIDTH=800,GAME_HEIGHT=600;
     public TankFrame(){
         super("tank war");
@@ -73,6 +74,8 @@ public class TankFrame extends Frame{
                 bullets.get(i).collideWith(tanks.get(i));
             }
         }
+
+        e.paint(g);
     }
     class MyKeyListener extends KeyAdapter{
         //创建四个变量代表上下左右键是否被按下，根据按下的键控制坦克的移动方向
