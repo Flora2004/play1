@@ -4,28 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/play1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Dir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/ResourceMgr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletL.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletR.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankL.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankR.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankU.gif" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="敌人坦克可以被打死">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,10 +54,43 @@
       <option name="presentableId" value="Default" />
       <updated>1689558765798</updated>
     </task>
+    <task id="LOCAL-00001" summary="敌人坦克可以被打死">
+      <created>1689639092747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639092747</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="敌人坦克可以被打死" />
+    <option name="LAST_COMMIT_MESSAGE" value="敌人坦克可以被打死" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
