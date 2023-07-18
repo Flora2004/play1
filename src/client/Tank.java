@@ -30,8 +30,6 @@ public class Tank {
         this.tankFrame=tankFrame;
     }
 
-
-
     public int getX() {
         return x;
     }
@@ -76,8 +74,6 @@ public class Tank {
     public void paint(Graphics g){
         if(!living) tankFrame.tanks.remove(this);
 
-
-
         switch (dir){
             case LEFT:
                 g.drawImage(this.group==Group.GOOD?ResourceMgr.goodTankL:ResourceMgr.badTankL,x,y,null);
@@ -115,9 +111,17 @@ public class Tank {
         }
         if(this.group==Group.BAD&&random.nextInt(100)>95)
             this.fire();
+
         if(this.group==Group.BAD&&random.nextInt(100)>90)
             randomDir();
 
+        boundsCheck();//边界检测，让坦克在屏幕中移动
+    }
+    private void boundsCheck(){//边界检测，让坦克在屏幕中移动
+        if(this.x<2)x=2;
+        if (this.y<28) y=28;
+        if(this.x>TankFrame.GAME_WIDTH-Tank.WIDTH-2)x=TankFrame.GAME_WIDTH-Tank.WIDTH-2;
+        if(this.y>TankFrame.GAME_HEIGHT-Tank.HEIGHT-2)y=TankFrame.GAME_HEIGHT-Tank.HEIGHT-2;
     }
     private void randomDir(){
         this.dir=Dir.values()[random.nextInt(4)];
