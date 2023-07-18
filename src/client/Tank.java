@@ -18,9 +18,12 @@ public class Tank {
     public static int HEIGHT=ResourceMgr.goodTankU.getHeight();
     private Random random=new Random();
     private boolean moving=true;
-    private TankFrame tankFrame;
     private boolean living=true;
     private Group group=Group.BAD;
+    private TankFrame tankFrame;
+    Rectangle rect=new Rectangle();
+
+
     public Tank(int x, int y, Dir dir,Group group,TankFrame tankFrame){
         super();
         this.x=x;
@@ -28,6 +31,11 @@ public class Tank {
         this.dir=dir;
         this.group=group;
         this.tankFrame=tankFrame;
+
+        rect.x=this.x;
+        rect.y=this.y;
+        rect.width= WIDTH;
+        rect.height=HEIGHT;
     }
 
     public int getX() {
@@ -119,6 +127,7 @@ public class Tank {
             default:
                 break;
         }
+
         if(this.group==Group.BAD&&random.nextInt(100)>95) {
             this.fire();
         }
@@ -128,6 +137,10 @@ public class Tank {
         }
 
         boundsCheck();//边界检测，让坦克在屏幕中移动
+
+        //更新rect
+        rect.x=this.x;
+        rect.y=this.y;
     }
     private void boundsCheck(){//边界检测，让坦克在屏幕中移动
         if(this.x<2) {
