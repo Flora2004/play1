@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="好的坦克和坏的坦克区分开">
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力">
+      <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +101,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689657571546</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="boundsCheck()">
+      <created>1689658059927</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689658059927</updated>
+    </task>
+    <task id="LOCAL-00008" summary="boundsCheck()">
+      <created>1689658172742</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689658172742</updated>
+    </task>
+    <task id="LOCAL-00009" summary="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力">
+      <created>1689658755646</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689658755646</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +154,8 @@
     <MESSAGE value="爆炸" />
     <MESSAGE value="让敌方坦克随机动并且随机射出子弹，在被击中后爆炸。" />
     <MESSAGE value="好的坦克和坏的坦克区分开" />
-    <option name="LAST_COMMIT_MESSAGE" value="好的坦克和坏的坦克区分开" />
+    <MESSAGE value="boundsCheck()" />
+    <MESSAGE value="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化碰撞检测，在每一个坦克对象的内部增加一个位置信息，随着坦克的移动，位置信息改变，减少实施产生位置信息的实例数量，减轻内存的压力" />
   </component>
 </project>
