@@ -4,71 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="敌人坦克可以被打死">
-      <change afterPath="$PROJECT_DIR$/src/client/Explode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/BadTank1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/BadTank2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/GoodTank1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/GoodTank2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bulletU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/e9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileLD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileLU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileRD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/missileRU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/square6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankLD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankLU.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankRD.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/tankRU.gif" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="爆炸">
+      <change afterPath="$PROJECT_DIR$/src/client/ImageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Explode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ResourceMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/bulletD.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/bulletD.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/bulletL.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/bulletL.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/bulletR.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/bulletR.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/bulletU.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/bulletU.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/tankD.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/tankD.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/tankL.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/tankL.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/tankR.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/tankR.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/tankU.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/tankU.gif" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -132,7 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689639879147</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="爆炸">
+      <created>1689643165853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689643165853</updated>
+    </task>
+    <task id="LOCAL-00004" summary="爆炸">
+      <created>1689643279068</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689643279068</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="敌人坦克可以被打死" />
-    <option name="LAST_COMMIT_MESSAGE" value="敌人坦克可以被打死" />
+    <MESSAGE value="爆炸" />
+    <option name="LAST_COMMIT_MESSAGE" value="爆炸" />
   </component>
 </project>

@@ -13,9 +13,9 @@ import java.util.Random;
 public class Tank {
     private int x,y;
     private Dir dir;
-    private static final int SPEED=2;
-    public static int WIDTH=ResourceMgr.tankL.getWidth();
-    public static int HEIGHT=ResourceMgr.tankL.getHeight();
+    private static final int SPEED=5;
+    public static int WIDTH=ResourceMgr.tankU.getWidth();
+    public static int HEIGHT=ResourceMgr.tankU.getHeight();
     private Random random=new Random();
     private boolean moving=true;
     private TankFrame tankFrame;
@@ -112,7 +112,14 @@ public class Tank {
             default:
                 break;
         }
-        if(random.nextInt(10)>8)this.fire();
+        if(this.group==Group.BAD&&random.nextInt(100)>95)
+            this.fire();
+        if(this.group==Group.BAD&&random.nextInt(100)>90)
+            randomDir();
+
+    }
+    private void randomDir(){
+        this.dir=Dir.values()[random.nextInt(4)];
     }
 
     public void fire(){

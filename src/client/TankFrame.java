@@ -19,9 +19,9 @@ public class TankFrame extends Frame{
     Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
     List<Bullet>bullets=new ArrayList<>();//子弹
     List<Tank>tanks=new ArrayList<>();//自动生成的敌方坦克
-    Explode e=new Explode(100,100,this);
+    List<Explode>explodes=new ArrayList<>();//爆炸效果
     Bullet b=new Bullet(300,300,Dir.DOWN,Group.GOOD,this);
-    static final int GAME_WIDTH=800,GAME_HEIGHT=600;
+    static final int GAME_WIDTH=1080,GAME_HEIGHT=960;
     public TankFrame(){
         super("tank war");
         setSize(GAME_WIDTH,GAME_HEIGHT);//设置窗口大小800x600
@@ -57,25 +57,29 @@ public class TankFrame extends Frame{
         Color c=g.getColor();
         g.setColor(Color.white);
         g.drawString("子弹的数量"+bullets.size(),10,50);//显示子弹的数量
-        g.drawString("敌人的数量"+tanks.size(),10,70);
+        g.drawString("敌人的数量"+tanks.size(),10,70);//显示敌人的数量
+        g.drawString("爆炸的数量"+tanks.size(),10,90);//显示爆炸的数量
+
         g.setColor(c);
 
-        myTank.paint(g);
+        myTank.paint(g);//画出主坦克
         for (int i = 0; i < bullets.size(); i++) {
-            bullets.get(i).paint(g);
+            bullets.get(i).paint(g);//画出子弹
         }
         for (int i = 0; i < tanks.size(); i++) {
-            tanks.get(i).paint(g);
+            tanks.get(i).paint(g);//画出敌方坦克
+        }
+        for (int i = 0; i < explodes.size(); i++) {
+            explodes.get(i).paint(g);//画出爆炸效果
         }
 
         //检测碰撞
         for (int i = 0; i < bullets.size(); i++) {
             for (int j = 0; j < tanks.size(); j++) {
-                bullets.get(i).collideWith(tanks.get(i));
+                bullets.get(i).collideWith(tanks.get(j));
             }
         }
 
-        e.paint(g);
     }
     class MyKeyListener extends KeyAdapter{
         //创建四个变量代表上下左右键是否被按下，根据按下的键控制坦克的移动方向
