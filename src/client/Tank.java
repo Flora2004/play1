@@ -11,18 +11,19 @@ import java.util.Random;
  * Time: 14:42
  */
 public class Tank {
-    private int x,y;
-    private Dir dir;
-    private static final int SPEED=5;
+    int x,y;
+     Dir dir;
+    private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("tankSpeed"));
     public static int WIDTH=ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT=ResourceMgr.goodTankU.getHeight();
     private Random random=new Random();
     private boolean moving=true;
     private boolean living=true;
-    private Group group=Group.BAD;
-    private TankFrame tankFrame;
+     Group group=Group.BAD;
+     TankFrame tankFrame;
     Rectangle rect=new Rectangle();
 
+    FireStrategy fs;
 
     public Tank(int x, int y, Dir dir,Group group,TankFrame tankFrame){
         super();
@@ -36,6 +37,22 @@ public class Tank {
         rect.y=this.y;
         rect.width= WIDTH;
         rect.height=HEIGHT;
+
+        if(group==Group.GOOD) {
+            String goodFSName=(String) PropertyMgr.get("goodFS");
+            try {
+                fs=(FireStrategy) Class.forName(goodFSName).getDeclaredConstructor().newInstance();//把名字代表的名字load到内存
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        } else if(group==Group.BAD) {
+            String badFSName=(String) PropertyMgr.get("badFS");
+            try {
+                fs=(FireStrategy) Class.forName(badFSName).getDeclaredConstructor().newInstance();//把名字代表的名字load到内存
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     public int getX() {
@@ -128,6 +145,8 @@ public class Tank {
                 break;
         }
 
+
+
         if(this.group==Group.BAD&&random.nextInt(100)>95) {
             this.fire();
         }
@@ -138,7 +157,7 @@ public class Tank {
 
         boundsCheck();//边界检测，让坦克在屏幕中移动
 
-        //更新rect
+        // 更新rect
         rect.x=this.x;
         rect.y=this.y;
     }
@@ -161,9 +180,7 @@ public class Tank {
     }
 
     public void fire(){
-        int bX=this.x+Tank.WIDTH/2-Bullet.WIDTH/2;
-        int bY=this.y+Tank.HEIGHT/2-Bullet.HEIGHT/2;
-        tankFrame.bullets.add(new Bullet(bX,bY,this.dir,this.group,this.tankFrame));
+        fs.fire(this);
     }
     public void die(){
         this.living=false;

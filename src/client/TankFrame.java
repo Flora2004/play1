@@ -21,7 +21,8 @@ public class TankFrame extends Frame{
     List<Tank>tanks=new ArrayList<>();//自动生成的敌方坦克
     List<Explode>explodes=new ArrayList<>();//爆炸效果
     Bullet b=new Bullet(300,300,Dir.DOWN,Group.GOOD,this);
-    static final int GAME_WIDTH=1080,GAME_HEIGHT=960;
+    static final int GAME_WIDTH=Integer.parseInt((String) PropertyMgr.get("gameWidth"));//使用配置文件来改变
+    static final int GAME_HEIGHT=Integer.parseInt((String) PropertyMgr.get("gameHeight"));//使用配置文件来改变
     public TankFrame(){
         super("tank war");
         setSize(GAME_WIDTH,GAME_HEIGHT);//设置窗口大小800x600

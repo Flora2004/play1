@@ -10,7 +10,7 @@ import java.awt.*;
  * Time: 15:18
  */
 public class Bullet {
-    private static final int SPEED=10;
+    private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("bulletSpeed"));//使用配置文件来改变
     public static int WIDTH=ResourceMgr.bulletD.getWidth();
     public static int HEIGHT=ResourceMgr.bulletD.getHeight();
 
@@ -32,6 +32,8 @@ public class Bullet {
         rect.y=this.y;
         rect.width= WIDTH;
         rect.height=HEIGHT;
+
+        tankFrame.bullets.add(this);
     }
 
     public Group getGroup() {
