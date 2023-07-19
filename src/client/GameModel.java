@@ -17,13 +17,8 @@ import java.util.List;
  * Time: 8:14
  */
 public class GameModel {
-    Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
-    /*
-    List<Bullet> bullets=new ArrayList<>();//子弹
-    List<Tank> tanks=new ArrayList<>();//自动生成的敌方坦克
-    List<Explode> explodes=new ArrayList<>();//爆炸效果
-    */
 
+    Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
     ColliderChain chain=new ColliderChain();
 
     private List<GameObject> objects=new ArrayList<>();//所有的物体
@@ -36,7 +31,14 @@ public class GameModel {
                     +i*Integer.parseInt((String) PropertyMgr.get("badTankSpace")),
                     Integer.parseInt((String) PropertyMgr.get("badTankY")),Dir.DOWN,Group.BAD,this));
         }
+
+        //初始化墙
+        add(new Wall(150,150,200,50));
+        add(new Wall(550,150,200,50));
+        add(new Wall(300,300,50,200));
+        add(new Wall(550,300,50,200));
     }
+
 
     public void add(GameObject go){
         this.objects.add(go);

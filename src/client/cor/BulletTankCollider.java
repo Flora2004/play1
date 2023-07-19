@@ -16,18 +16,18 @@ public class BulletTankCollider implements Collider{
             Bullet b=(Bullet) o1;
             Tank t=(Tank) o2;
 
-            if(b.getGroup()==t.getGroup())return true;
+            if(b.getGroup()==t.getGroup()) return true;
 
-            if(b.getRect().intersects(t.getRect())){
+            if(b.rect.intersects(t.rect)){
                 t.die();
                 b.die();
                 int eX=t.getX()+Tank.WIDTH/2- Explode.WIDTH/2;
                 int eY=t.getY()+Tank.HEIGHT/2-Explode.HEIGHT/2;
-                t.getGm().add(new Explode(eX,eY,t.getGm()));
+                new Explode(eX,eY,t.getGameModel());
                 return false;
             }
         } else if (o1 instanceof Tank && o2 instanceof Bullet){
-            collide(o2,o1);
+            return collide(o2,o1);
         }
         return true;
     }

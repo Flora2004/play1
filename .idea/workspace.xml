@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务">
-      <change afterPath="$PROJECT_DIR$/src/client/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/cor/BulletTankCollider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/cor/Collider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/cor/ColliderChain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/cor/TankTankCollider.java" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="责任链模式控制碰撞+mv分离整体封装">
+      <change afterPath="$PROJECT_DIR$/src/client/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/cor/BulletWallCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/cor/TankWallCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/DefaultFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/DefaultFireStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Explode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/FireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/FireStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/FourDirFireStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/cor/BulletTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/BulletTankCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/cor/ColliderChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/ColliderChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/cor/TankTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/TankTankCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,9 +75,30 @@
       <recent name="C:\Users\angel\Desktop\java\javalearning\play1\src\client" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="client.cor" />
       <recent name="client" />
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.Main" />
+      <module name="play1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -202,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689727644278</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="责任链模式控制碰撞+mv分离整体封装">
+      <created>1689737044500</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689737044500</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,7 +267,8 @@
     <MESSAGE value="小优化" />
     <MESSAGE value="增加md说明文件" />
     <MESSAGE value="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务" />
-    <option name="LAST_COMMIT_MESSAGE" value="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务" />
+    <MESSAGE value="责任链模式控制碰撞+mv分离整体封装" />
+    <option name="LAST_COMMIT_MESSAGE" value="责任链模式控制碰撞+mv分离整体封装" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

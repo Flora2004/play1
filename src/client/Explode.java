@@ -13,14 +13,15 @@ public class Explode extends GameObject{
     public static int WIDTH=ResourceMgr.explodes[0].getWidth();
     public static int HEIGHT=ResourceMgr.explodes[0].getHeight();
 
-    private int x,y;
     private int step;
     GameModel gm;
-    public Explode(int x, int y, GameModel gm){
+    public Explode(int x, int y,GameModel gm){
         this.x=x;
         this.y=y;
         this.gm=gm;
 
+        new Thread(()->new Audio("audio/expolde.wav").play()).start();
+        gm.add(this);
     }
     public void paint(Graphics g){
 

@@ -13,9 +13,8 @@ import java.util.Random;
  * Time: 14:42
  */
 public class Tank extends GameObject{
-    int x,y;
     int oldX,oldY;
-     Dir dir;
+    private Dir dir;
     private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("tankSpeed"));
     public static int WIDTH=ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT=ResourceMgr.goodTankU.getHeight();
@@ -23,7 +22,7 @@ public class Tank extends GameObject{
     private boolean moving=true;
     private boolean living=true;
     Group group=Group.BAD;
-    Rectangle rect=new Rectangle();
+    public Rectangle rect=new Rectangle();
     GameModel gm;
     FireStrategy fs;//开火模式
 
@@ -97,16 +96,10 @@ public class Tank extends GameObject{
     public void setMoving(boolean moving){
         this.moving=moving;
     }
-    public Rectangle getRect(){
-        return this.rect;
-    }
-    public GameModel getGm(){
-        return this.gm;
-    }
-
-    public GameModel getGameModel(){
+    public GameModel getGameModel() {
         return gm;
     }
+
     public void paint(Graphics g){
         if(!living) {
             gm.remove(this);
@@ -132,6 +125,10 @@ public class Tank extends GameObject{
         move();
     }
     private void move(){
+        //记录移动之前的位置
+        oldX=x;
+        oldY=y;
+
         if(!living){
             return;
         }
@@ -139,11 +136,6 @@ public class Tank extends GameObject{
         if(!moving) {
             return;
         }
-
-        //坦克碰撞后复位坐标
-        oldX=this.x;
-        oldY=this.y;
-
 
         switch (dir){
             case LEFT :{
@@ -226,11 +218,12 @@ public class Tank extends GameObject{
             }
             default:
                 break;
-    }
+        }
     }
 
-    //坦克停止
-    public void stop(){
-        this.moving=false;
+    public void back(){
+        x=oldX;
+        y=oldY;
     }
+
 }

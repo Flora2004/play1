@@ -16,11 +16,7 @@ import java.util.List;
  * Time: 13:40
  */
 public class TankFrame extends Frame{
-
     GameModel gm=new GameModel();
-
-
-    Bullet b=new Bullet(300,300,Dir.DOWN,Group.GOOD,gm);
     static final int GAME_WIDTH=Integer.parseInt((String) PropertyMgr.get("gameWidth"));//使用配置文件来改变
     static final int GAME_HEIGHT=Integer.parseInt((String) PropertyMgr.get("gameHeight"));//使用配置文件来改变
     public TankFrame(){
@@ -55,10 +51,7 @@ public class TankFrame extends Frame{
     }
     @Override
     public void paint(Graphics g){
-
         gm.paint(g);
-
-
     }
     class MyKeyListener extends KeyAdapter{
         //创建四个变量代表上下左右键是否被按下，根据按下的键控制坦克的移动方向
