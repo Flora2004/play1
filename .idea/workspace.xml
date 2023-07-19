@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="责任链模式控制碰撞+mv分离整体封装">
-      <change afterPath="$PROJECT_DIR$/src/client/Wall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/cor/BulletWallCollider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/cor/TankWallCollider.java" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="责任链模式控制碰撞,优化了责任链的细节，增加了墙体，将游戏中的所有物体抽象出了一个父类，减少了集合的建立，降低增加物品的难度">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Explode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/cor/BulletTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/BulletTankCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/cor/ColliderChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/ColliderChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/cor/TankTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/TankTankCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/cor/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/cor/Collider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/strategy/FireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/FireStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689737044500</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="责任链模式控制碰撞,优化了责任链的细节，增加了墙体，将游戏中的所有物体抽象出了一个父类，减少了集合的建立，降低增加物品的难度">
+      <created>1689764937841</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689764937841</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,7 +269,8 @@
     <MESSAGE value="增加md说明文件" />
     <MESSAGE value="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务" />
     <MESSAGE value="责任链模式控制碰撞+mv分离整体封装" />
-    <option name="LAST_COMMIT_MESSAGE" value="责任链模式控制碰撞+mv分离整体封装" />
+    <MESSAGE value="责任链模式控制碰撞,优化了责任链的细节，增加了墙体，将游戏中的所有物体抽象出了一个父类，减少了集合的建立，降低增加物品的难度" />
+    <option name="LAST_COMMIT_MESSAGE" value="责任链模式控制碰撞,优化了责任链的细节，增加了墙体，将游戏中的所有物体抽象出了一个父类，减少了集合的建立，降低增加物品的难度" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

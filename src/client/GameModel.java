@@ -6,6 +6,7 @@ import client.cor.ColliderChain;
 import client.cor.TankTankCollider;
 
 import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * Date: 2023-07-19
  * Time: 8:14
  */
-public class GameModel {
+public class GameModel implements Serializable{
 
     Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
     ColliderChain chain=new ColliderChain();
@@ -93,4 +94,43 @@ public class GameModel {
         return myTank;
     }
 
+    public void save(){
+        File f =new File("D://Test//tank.data");
+        ObjectOutputStream oos=null;
+        try{
+        oos=new ObjectOutputStream(new FileOutputStream(f));
+        oos.writeObject(myTank);
+        oos.writeObject(objects);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(oos!=null){
+                try{
+                    oos.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void load() {
+        File f =new File("D://Test//tank.data");
+        ObjectInputStream ois=null;
+        try{
+            ois=new ObjectInputStream(new FileInputStream(f));
+            myTank=(Tank) ois.readObject();
+            objects=(List)ois.readObject() ;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(ois!=null){
+                try{
+                    ois.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }

@@ -110,6 +110,14 @@ public class TankFrame extends Frame{
                     gm.getMainTank().fire();
                     break;
                 }
+                case KeyEvent.VK_S:{
+                    gm.save();//s键存盘
+                    break;
+                }
+                case KeyEvent.VK_L:{
+                    gm.load();
+                    break;
+                }
                 default:
                     break;
             }
