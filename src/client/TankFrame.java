@@ -16,11 +16,11 @@ import java.util.List;
  * Time: 13:40
  */
 public class TankFrame extends Frame{
-    Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
-    List<Bullet>bullets=new ArrayList<>();//子弹
-    List<Tank>tanks=new ArrayList<>();//自动生成的敌方坦克
-    List<Explode>explodes=new ArrayList<>();//爆炸效果
-    Bullet b=new Bullet(300,300,Dir.DOWN,Group.GOOD,this);
+
+    GameModel gm=new GameModel();
+
+
+    Bullet b=new Bullet(300,300,Dir.DOWN,Group.GOOD,gm);
     static final int GAME_WIDTH=Integer.parseInt((String) PropertyMgr.get("gameWidth"));//使用配置文件来改变
     static final int GAME_HEIGHT=Integer.parseInt((String) PropertyMgr.get("gameHeight"));//使用配置文件来改变
     public TankFrame(){
@@ -55,31 +55,9 @@ public class TankFrame extends Frame{
     }
     @Override
     public void paint(Graphics g){
-        Color c=g.getColor();
-        g.setColor(Color.white);
-        g.drawString("子弹的数量"+bullets.size(),10,50);//显示子弹的数量
-        g.drawString("敌人的数量"+tanks.size(),10,70);//显示敌人的数量
-        g.drawString("爆炸的数量"+tanks.size(),10,90);//显示爆炸的数量
 
-        g.setColor(c);
+        gm.paint(g);
 
-        myTank.paint(g);//画出主坦克
-        for (int i = 0; i < bullets.size(); i++) {
-            bullets.get(i).paint(g);//画出子弹
-        }
-        for (int i = 0; i < tanks.size(); i++) {
-            tanks.get(i).paint(g);//画出敌方坦克
-        }
-        for (int i = 0; i < explodes.size(); i++) {
-            explodes.get(i).paint(g);//画出爆炸效果
-        }
-
-        //检测碰撞
-        for (int i = 0; i < bullets.size(); i++) {
-            for (int j = 0; j < tanks.size(); j++) {
-                bullets.get(i).collideWith(tanks.get(j));
-            }
-        }
 
     }
     class MyKeyListener extends KeyAdapter{
@@ -136,7 +114,7 @@ public class TankFrame extends Frame{
                     break;
                 }
                 case KeyEvent.VK_CONTROL:{
-                    myTank.fire();
+                    gm.getMainTank().fire();
                     break;
                 }
                 default:
@@ -145,14 +123,22 @@ public class TankFrame extends Frame{
             setMainTankDir();
         }
         private void setMainTankDir(){
-            if(!bL&&!bU&&!bR&&!bD)myTank.setMoving(false);//没有摁键的时候不动
+            Tank myTank=gm.getMainTank();
+
+            if(!bL&&!bU&&!bR&&!bD) {
+                myTank.setMoving(false);//没有摁键的时候不动
+            }
             else {
                 myTank.setMoving(true);//坦克开始移动
 
-                if (bL) myTank.setDir(Dir.LEFT);//设置方向
-                if (bU) myTank.setDir(Dir.UP);
-                if (bR) myTank.setDir(Dir.RIGHT);
-                if (bD) myTank.setDir(Dir.DOWN);
+                if (bL)
+                    myTank.setDir(Dir.LEFT);//设置方向
+                if (bU)
+                    myTank.setDir(Dir.UP);
+                if (bR)
+                    myTank.setDir(Dir.RIGHT);
+                if (bD)
+                    myTank.setDir(Dir.DOWN);
             }
         }
     }

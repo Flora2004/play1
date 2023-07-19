@@ -20,18 +20,18 @@ public class Tank {
     private boolean moving=true;
     private boolean living=true;
      Group group=Group.BAD;
-     TankFrame tankFrame;
     Rectangle rect=new Rectangle();
 
     FireStrategy fs;
+    GameModel gm;
 
-    public Tank(int x, int y, Dir dir,Group group,TankFrame tankFrame){
+    public Tank(int x, int y, Dir dir,Group group,GameModel gm){
         super();
         this.x=x;
         this.y=y;
         this.dir=dir;
         this.group=group;
-        this.tankFrame=tankFrame;
+        this.gm=gm;
 
         rect.x=this.x;
         rect.y=this.y;
@@ -98,7 +98,7 @@ public class Tank {
 
     public void paint(Graphics g){
         if(!living) {
-            tankFrame.tanks.remove(this);
+            gm.tanks.remove(this);
         }
 
         switch (dir){
