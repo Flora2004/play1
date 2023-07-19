@@ -4,6 +4,11 @@ tankSpeed=4
 bulletSpeed=10
 gameWidth=1080
 gameHeight=720
+badTankX=50
+badTankY=200
+badTankSpace=70
 #fireStrategy
-goodFS=client.FourDirFireStrategy
-badFS=client.DefaultFireStrategy
+goodFS=client.strategy.FourDirFireStrategy
+badFS=client.strategy.DefaultFireStrategy
+#colliders
+colliders=client.cor.colliders.BulletTankCollider,client.cor.colliders.TankTankCollider

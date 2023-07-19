@@ -1,6 +1,7 @@
 package client;
 
 import java.awt.*;
+import java.security.PublicKey;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,7 +10,7 @@ import java.awt.*;
  * Date: 2023-07-17
  * Time: 15:18
  */
-public class Bullet {
+public class Bullet extends GameObject{
     private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("bulletSpeed"));//使用配置文件来改变
     public static int WIDTH=ResourceMgr.bulletD.getWidth();
     public static int HEIGHT=ResourceMgr.bulletD.getHeight();
@@ -33,7 +34,7 @@ public class Bullet {
         rect.width= WIDTH;
         rect.height=HEIGHT;
 
-        gm.bullets.add(this);
+        gm.add(this);
     }
 
     public Group getGroup() {
@@ -43,10 +44,15 @@ public class Bullet {
     public void setGroup(Group group) {
         this.group = group;
     }
-
+    public Rectangle getRect(){
+        return this.rect;
+    }
+    public GameModel getGm(){
+        return this.gm;
+    }
     public void paint(Graphics g){
         if(!living){
-            gm.bullets.remove(this);//当子弹离开屏幕的时候就从数列中删除
+            gm.remove(this);//当子弹离开屏幕的时候就从数列中删除
         }
         switch (dir){
             case LEFT:
@@ -91,20 +97,20 @@ public class Bullet {
         rect.x=this.x;
         rect.y=this.y;
     }
-    private void die(){
+    public void die(){
         this.living=false;
     }
 
     //判断碰撞
-    public void collideWith(Tank tank){
-        if(this.group==tank.getGroup())return;
-
-        if(rect.intersects(tank.rect)){
-            tank.die();
-            this.die();
-            int eX=tank.getX()+Tank.WIDTH/2-Explode.WIDTH/2;
-            int eY=tank.getY()+Tank.HEIGHT/2-Explode.HEIGHT/2;
-            gm.explodes.add(new Explode(eX,eY,gm));
-        }
-    }
+//    public void collideWith(Tank tank){
+//        if(this.group==tank.getGroup())return;
+//
+//        if(rect.intersects(tank.rect)){
+//            tank.die();
+//            this.die();
+//            int eX=tank.getX()+Tank.WIDTH/2-Explode.WIDTH/2;
+//            int eY=tank.getY()+Tank.HEIGHT/2-Explode.HEIGHT/2;
+//            gm.add(new Explode(eX,eY,gm));
+//        }
+//    }
 }

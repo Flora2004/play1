@@ -1,4 +1,6 @@
-package client;
+package client.strategy;
+
+import client.Tank;
 
 /**
  * Created with IntelliJ IDEA.

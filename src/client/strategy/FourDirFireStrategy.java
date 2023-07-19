@@ -1,4 +1,6 @@
-package client;
+package client.strategy;
+
+import client.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,15 +12,15 @@ package client;
 public class FourDirFireStrategy implements FireStrategy{
     @Override
     public void fire(Tank t) {
-        int bX=t.x+Tank.WIDTH/2-Bullet.WIDTH/2;
-        int bY=t.y+Tank.HEIGHT/2-Bullet.HEIGHT/2;
+        int bX=t.getX()+Tank.WIDTH/2- Bullet.WIDTH/2;
+        int bY=t.getY()+Tank.HEIGHT/2-Bullet.HEIGHT/2;
 
         Dir[] dirs=Dir.values();
         for(Dir dir:dirs){
-            new Bullet(bX,bY,dir,t.group,t.gm);
+            new Bullet(bX,bY,dir,t.getGroup(),t.getGameModel());
         }
 
-        if(t.group==Group.GOOD){
+        if(t.getGroup()== Group.GOOD){
             new Thread(()->new Audio("audio/tank_fire.wav").play()).start();
         }
     }

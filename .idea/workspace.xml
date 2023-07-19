@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="增加md说明文件">
-      <change afterPath="$PROJECT_DIR$/src/client/GameModel.java" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务">
+      <change afterPath="$PROJECT_DIR$/src/client/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/cor/BulletTankCollider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/cor/Collider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/cor/ColliderChain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/cor/TankTankCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/DefaultFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/DefaultFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/DefaultFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/DefaultFireStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Explode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/FourDirFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/FireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/FireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/strategy/FourDirFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -188,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689725272733</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务">
+      <created>1689727644278</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689727644278</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,7 +240,8 @@
     <MESSAGE value="策略设计模式，一种是默认向前发射一颗子弹，另一种是向四方同时发射四颗子弹。" />
     <MESSAGE value="小优化" />
     <MESSAGE value="增加md说明文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加md说明文件" />
+    <MESSAGE value="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务" />
+    <option name="LAST_COMMIT_MESSAGE" value="抽象出GameModel，将Model和View分离，同时，将GameModel作为Facade，负责与Frame打交道，同时负责内部事务" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
