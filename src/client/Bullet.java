@@ -10,7 +10,7 @@ import java.awt.*;
  * Time: 15:18
  */
 public class Bullet {
-    private static final int SPEED=10;
+    private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("bulletSpeed"));//使用配置文件来改变
     public static int WIDTH=ResourceMgr.bulletD.getWidth();
     public static int HEIGHT=ResourceMgr.bulletD.getHeight();
 
@@ -19,6 +19,7 @@ public class Bullet {
     private boolean living=true;
     private Group group=Group.BAD;
     private TankFrame tankFrame;
+    Rectangle rect=new Rectangle();
 
     public Bullet(int x,int y,Dir dir,Group group,TankFrame tankFrame){
         this.x=x;
@@ -26,6 +27,13 @@ public class Bullet {
         this.dir=dir;
         this.group=group;
         this.tankFrame=tankFrame;
+
+        rect.x=this.x;
+        rect.y=this.y;
+        rect.width= WIDTH;
+        rect.height=HEIGHT;
+
+        tankFrame.bullets.add(this);
     }
 
     public Group getGroup() {
@@ -76,7 +84,12 @@ public class Bullet {
             default:
                 break;
         }
+
         if(x<0||y<0||x>TankFrame.GAME_WIDTH||y>TankFrame.GAME_HEIGHT)living=false;//如果离开屏幕则子弹状态为false
+
+        //更新rect
+        rect.x=this.x;
+        rect.y=this.y;
     }
     private void die(){
         this.living=false;
@@ -86,12 +99,12 @@ public class Bullet {
     public void collideWith(Tank tank){
         if(this.group==tank.getGroup())return;
 
-        //TODO:用一个rect来记录子弹的位置
-        Rectangle rect1=new Rectangle(this.x,this.y,WIDTH,HEIGHT);
-        Rectangle rect2=new Rectangle(tank.getX(),tank.getY(),Tank.WIDTH,Tank.HEIGHT);
-        if(rect1.intersects(rect2)){
+        if(rect.intersects(tank.rect)){
             tank.die();
             this.die();
+            int eX=tank.getX()+Tank.WIDTH/2-Explode.WIDTH/2;
+            int eY=tank.getY()+Tank.HEIGHT/2-Explode.HEIGHT/2;
+            tankFrame.explodes.add(new Explode(eX,eY,tankFrame));
         }
     }
 }

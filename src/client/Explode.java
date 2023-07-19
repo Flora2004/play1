@@ -22,10 +22,11 @@ public class Explode {
         this.y=y;
         this.tankFrame=tankFrame;
     }
-
     public void paint(Graphics g){
+
         g.drawImage(ResourceMgr.explodes[step++],x,y,null);
+
         if(step>=ResourceMgr.explodes.length)
-            step=0;
+            tankFrame.explodes.remove(this);
     }
 }
