@@ -15,9 +15,11 @@ import java.util.Random;
 public class Tank extends GameObject{
     int oldX,oldY;
     private Dir dir;
+
     private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("tankSpeed"));
     public static int WIDTH=ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT=ResourceMgr.goodTankU.getHeight();
+
     private Random random=new Random();
     private boolean moving=true;
     private boolean living=true;
@@ -173,11 +175,11 @@ public class Tank extends GameObject{
         rect.y=this.y;
     }
     private void boundsCheck(){//边界检测，让坦克在屏幕中移动
-        if(this.x<10) {
-            x=10;
+        if(this.x<2) {
+            x=2;
         }
-        if (this.y<38) {
-            y=38;
+        if (this.y<28) {
+            y=28;
         }
         if(this.x>TankFrame.GAME_WIDTH-Tank.WIDTH-2) {
             x=TankFrame.GAME_WIDTH-Tank.WIDTH-2;

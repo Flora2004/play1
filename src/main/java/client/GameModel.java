@@ -26,12 +26,12 @@ public class GameModel implements Serializable{
 
     public GameModel(){
         //初始化敌方坦克
-        int initTankCount= Integer.parseInt((String) PropertyMgr.get("initTankCount"));//使用配置文件来改变
-        for (int i = 0; i < initTankCount; i++) {
-            add(new Tank(Integer.parseInt((String) PropertyMgr.get("badTankX"))
-                    +i*Integer.parseInt((String) PropertyMgr.get("badTankSpace")),
-                    Integer.parseInt((String) PropertyMgr.get("badTankY")),Dir.DOWN,Group.BAD,this));
-        }
+//        int initTankCount= Integer.parseInt((String) PropertyMgr.get("initTankCount"));//使用配置文件来改变
+//        for (int i = 0; i < initTankCount; i++) {
+//            add(new Tank(Integer.parseInt((String) PropertyMgr.get("badTankX"))
+//                    +i*Integer.parseInt((String) PropertyMgr.get("badTankSpace")),
+//                    Integer.parseInt((String) PropertyMgr.get("badTankY")),Dir.DOWN,Group.BAD,this));
+//        }
 
         //初始化墙
         add(new Wall(150,150,200,50));
@@ -70,8 +70,6 @@ public class GameModel implements Serializable{
                 chain.collide(o1,o2);
             }
         }
-
-
 //        for (int i = 0; i < bullets.size(); i++) {
 //            bullets.get(i).paint(g);//画出子弹
 //        }
