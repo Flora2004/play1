@@ -1,5 +1,10 @@
 package client;
 
+import client.net.Client;
+import client.net.TankDirChangeMsg;
+import client.net.TankStartMovingMsg;
+import client.net.TankStopMsg;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -16,14 +21,17 @@ import java.util.List;
  * Time: 13:40
  */
 public class TankFrame extends Frame{
+    public static final TankFrame INSTANCE=new TankFrame();
     GameModel gm=new GameModel();
-    static final int GAME_WIDTH=Integer.parseInt((String) PropertyMgr.get("gameWidth"));//使用配置文件来改变
-    static final int GAME_HEIGHT=Integer.parseInt((String) PropertyMgr.get("gameHeight"));//使用配置文件来改变
-    public TankFrame(){
-        super("tank war");
-        setSize(GAME_WIDTH,GAME_HEIGHT);//设置窗口大小800x600
+    public static final int GAME_WIDTH=1080;
+    public static final int GAME_HEIGHT=960;
+//    static final int GAME_WIDTH=Integer.parseInt((String) PropertyMgr.get("gameWidth"));//使用配置文件来改变
+//    static final int GAME_HEIGHT=Integer.parseInt((String) PropertyMgr.get("gameHeight"));//使用配置文件来改变
+    private TankFrame(){
+        setSize(GAME_WIDTH,GAME_HEIGHT);//设置窗口大小
         setResizable(false);//禁止调整窗口大小
         setVisible(true);//使窗口可见
+        setTitle("tank war");
 
         addWindowListener(new WindowAdapter() {
             @Override
@@ -32,6 +40,9 @@ public class TankFrame extends Frame{
             }
         });
         this.addKeyListener(new MyKeyListener());
+    }
+    public GameModel getGm(){
+        return gm;
     }
 
     //利用双缓冲一次性画完所有，减少闪烁
@@ -66,24 +77,28 @@ public class TankFrame extends Frame{
             switch (key){
                 case KeyEvent.VK_LEFT:{
                     bL=true;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_UP:{
                     bU=true;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_RIGHT:{
                     bR=true;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_DOWN:{
                     bD=true;
+                    setMainTankDir();
                     break;
                 }
                 default:
                     break;
             }
-            setMainTankDir();
+            new Thread(()->new Audio("audio/tank_move.wav").play()).start();
         }
 
         @Override
@@ -92,18 +107,22 @@ public class TankFrame extends Frame{
             switch (key){
                 case KeyEvent.VK_LEFT:{
                     bL=false;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_UP:{
                     bU=false;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_RIGHT:{
                     bR=false;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_DOWN:{
                     bD=false;
+                    setMainTankDir();
                     break;
                 }
                 case KeyEvent.VK_CONTROL:{
@@ -121,17 +140,19 @@ public class TankFrame extends Frame{
                 default:
                     break;
             }
-            setMainTankDir();
         }
         private void setMainTankDir(){
             Tank myTank=gm.getMainTank();
+            Dir dir=myTank.getDir();
 
             if(!bL&&!bU&&!bR&&!bD) {
                 myTank.setMoving(false);//没有摁键的时候不动
+                Client.INSTANCE.send(new TankStopMsg(myTank));
             }
             else {
                 myTank.setMoving(true);//坦克开始移动
 
+                //TODO:设置斜着走
                 if (bL)
                     myTank.setDir(Dir.LEFT);//设置方向
                 if (bU)
@@ -140,6 +161,12 @@ public class TankFrame extends Frame{
                     myTank.setDir(Dir.RIGHT);
                 if (bD)
                     myTank.setDir(Dir.DOWN);
+                //发出坦克移动的消息
+                Client.INSTANCE.send(new TankStartMovingMsg(myTank));
+
+                if(dir != myTank.getDir()) {
+                  //  Client.INSTANCE.send(new TankDirChangeMsg(myTank));
+                }
             }
         }
     }

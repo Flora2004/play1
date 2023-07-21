@@ -1,5 +1,8 @@
 package client;
 
+import client.net.Client;
+
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -11,13 +14,25 @@ import java.util.Properties;
  */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        TankFrame tankFrame = new TankFrame();
+        TankFrame tankFrame = TankFrame.INSTANCE;
+        tankFrame.setVisible(true);
 
-//        new Thread(()->new Audio("audio//war1.wav").loop()).start();
+        //connect to the server
 
-        while (true) {
-            Thread.sleep(25);
-            tankFrame.repaint();
-        }
+        new Thread(()->new Audio("audio//war1.wav").loop()).start();
+
+        new Thread(()->{
+            while (true){
+                try{
+                    Thread.sleep(10);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                tankFrame.repaint();
+            }
+        }).start();
+
+        //create a thread to run
+        Client.INSTANCE.connect();
     }
 }

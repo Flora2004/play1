@@ -7,7 +7,7 @@ import client.cor.TankTankCollider;
 
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -18,8 +18,9 @@ import java.util.List;
  * Time: 8:14
  */
 public class GameModel implements Serializable{
-
-    Tank myTank=new Tank(200,400,Dir.DOWN,Group.GOOD,this);
+    int gameWidth=1080,gameHeight=960;
+    Random r=new Random();
+    Tank myTank=new Tank(r.nextInt(gameWidth),r.nextInt(gameHeight),Dir.values()[r.nextInt(4)],Group.GOOD,this);
     ColliderChain chain=new ColliderChain();
 
     private List<GameObject> objects=new ArrayList<>();//所有的物体
@@ -33,11 +34,11 @@ public class GameModel implements Serializable{
 //                    Integer.parseInt((String) PropertyMgr.get("badTankY")),Dir.DOWN,Group.BAD,this));
 //        }
 
-        //初始化墙
-        add(new Wall(150,150,200,50));
-        add(new Wall(550,150,200,50));
-        add(new Wall(300,300,50,200));
-        add(new Wall(550,300,50,200));
+//        //初始化墙
+//        add(new Wall(150,150,200,50));
+//        add(new Wall(550,150,200,50));
+//        add(new Wall(300,300,50,200));
+//        add(new Wall(550,300,50,200));
     }
 
 
@@ -46,6 +47,14 @@ public class GameModel implements Serializable{
     }
     public void remove(GameObject go){
         this.objects.remove(go);
+    }
+    public Tank findTankByUUID(UUID id) {
+        for (GameObject go : objects) {
+            if (go instanceof Tank && ((Tank) go).getId().equals(id)) {
+                return (Tank) go;
+            }
+        }
+        return null;
     }
 
     public void paint(Graphics g){
@@ -70,22 +79,6 @@ public class GameModel implements Serializable{
                 chain.collide(o1,o2);
             }
         }
-//        for (int i = 0; i < bullets.size(); i++) {
-//            bullets.get(i).paint(g);//画出子弹
-//        }
-//        for (int i = 0; i < tanks.size(); i++) {
-//            tanks.get(i).paint(g);//画出敌方坦克
-//        }
-//        for (int i = 0; i < explodes.size(); i++) {
-//            explodes.get(i).paint(g);//画出爆炸效果
-//        }
-
-        //检测碰撞
-//        for (int i = 0; i < bullets.size(); i++) {
-//            for (int j = 0; j < tanks.size(); j++) {
-//                bullets.get(i).collideWith(tanks.get(j));
-//            }
-//        }
     }
 
     public Tank getMainTank(){

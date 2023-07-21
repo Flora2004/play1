@@ -1,9 +1,11 @@
 package client;
 
+import client.net.TankJoinMsg;
 import client.strategy.FireStrategy;
 
 import java.awt.*;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,13 +22,29 @@ public class Tank extends GameObject{
     public static int WIDTH=ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT=ResourceMgr.goodTankU.getHeight();
 
+    private UUID id= UUID.randomUUID();
+
     private Random random=new Random();
-    private boolean moving=true;
+    private boolean moving=false;
     private boolean living=true;
     Group group=Group.BAD;
     public Rectangle rect=new Rectangle();
     GameModel gm;
     FireStrategy fs;//开火模式
+    public Tank(TankJoinMsg msg,GameModel gm) {
+        this.x = msg.x;
+        this.y = msg.y;
+        this.dir = msg.dir;
+        this.moving = msg.moving;
+        this.group = msg.group;
+        this.id = msg.id;
+        this.gm=gm;
+
+        rect.x = this.x;
+        rect.y = this.y;
+        rect.width = WIDTH;
+        rect.height = HEIGHT;
+    }
 
 
     public Tank(int x, int y, Dir dir,Group group,GameModel gm){
@@ -101,12 +119,18 @@ public class Tank extends GameObject{
     public GameModel getGameModel() {
         return gm;
     }
-
+    public UUID getId(){
+        return id;
+    }
     public void paint(Graphics g){
         if(!living) {
             gm.remove(this);
         }
-
+        //uuid on head
+        Color c=g.getColor();
+        g.setColor(Color.YELLOW);
+        g.drawString(id.toString(),this.x,this.y-10);
+        g.setColor(c);
         switch (dir){
             case LEFT:
                 g.drawImage(this.group==Group.GOOD?ResourceMgr.goodTankL:ResourceMgr.badTankL,x,y,null);
@@ -199,30 +223,7 @@ public class Tank extends GameObject{
         this.living=false;
     }
 
-    //坦克复位
-    public void goBack(){
-        switch (dir){
-            case LEFT :{
-                x=oldX+7;
-                break;
-            }
-            case UP:{
-                y=oldY+7;
-                break;
-            }
-            case RIGHT:{
-                x=oldX-7;
-                break;
-            }
-            case DOWN:{
-                y=oldY-7;
-                break;
-            }
-            default:
-                break;
-        }
-    }
-
+    //坦克接触到墙就停下
     public void back(){
         x=oldX;
         y=oldY;
