@@ -54,6 +54,22 @@ public class MsgDecoder extends ByteToMessageDecoder {
                 msg = new TankStopMsg();
                 break;
             }
+            case TankDirChange:{
+                msg = new TankDirChangeMsg();
+                break;
+            }
+            case TankDie:{
+                msg = new TankDieMsg();
+                break;
+            }
+            case BulletNew:{
+                msg = new BulletNewMsg();
+                break;
+            }
+            case ExplodeNew:{
+                msg= new ExplodeNewMsg();
+                break;
+            }
             //添加其他case处理其他消息类型
             default:
                 break;

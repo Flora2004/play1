@@ -4,6 +4,8 @@ import client.Audio;
 import client.Bullet;
 import client.Group;
 import client.Tank;
+import client.net.BulletNewMsg;
+import client.net.Client;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +20,8 @@ public class DefaultFireStrategy implements FireStrategy {
         int bX=t.getX()+Tank.WIDTH/2- Bullet.WIDTH/2;
         int bY=t.getY()+Tank.HEIGHT/2-Bullet.HEIGHT/2;
 
-        new Bullet(bX,bY,t.getDir(),t.getGroup(),t.getGameModel());
+       Bullet b = new Bullet(t.getId(),bX,bY,t.getDir(),t.getGroup(),t.getGameModel());
+        Client.INSTANCE.send(new BulletNewMsg(b));
 
         if(t.getGroup()== Group.GOOD){
             new Thread(()->new Audio("audio/tank_fire.wav").play()).start();

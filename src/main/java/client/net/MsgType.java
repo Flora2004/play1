@@ -8,5 +8,5 @@ package client.net;
  * Time: 16:40
  */
 public enum MsgType {
-    TankJoin,TankDirChange,TankStop,TankStartMoving,BulletNew,TankDie
+    TankJoin,TankDirChange,TankStop,TankStartMoving,BulletNew,TankDie,ExplodeNew
 }

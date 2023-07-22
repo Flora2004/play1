@@ -21,7 +21,7 @@ public class GameModel implements Serializable{
     int gameWidth=1080,gameHeight=960;
     Random r=new Random();
     Tank myTank=new Tank(r.nextInt(gameWidth),r.nextInt(gameHeight),Dir.values()[r.nextInt(4)],Group.GOOD,this);
-    ColliderChain chain=new ColliderChain();
+    ColliderChain chain=new ColliderChain();//碰撞的责任链
 
     private List<GameObject> objects=new ArrayList<>();//所有的物体
 
@@ -56,15 +56,23 @@ public class GameModel implements Serializable{
         }
         return null;
     }
+    public Bullet findBulletByUUID(UUID id) {
+        for (GameObject go : objects) {
+            if (go instanceof Bullet && ((Bullet) go).getId().equals(id)) {
+                return (Bullet) go;
+            }
+        }
+        return null;
+    }
 
     public void paint(Graphics g){
-        Color c=g.getColor();
-        g.setColor(Color.white);
+//        Color c=g.getColor();
+//        g.setColor(Color.white);
 //        g.drawString("子弹的数量"+bullets.size(),10,50);//显示子弹的数量
 //        g.drawString("敌人的数量"+tanks.size(),10,70);//显示敌人的数量
 //        g.drawString("爆炸的数量"+tanks.size(),10,90);//显示爆炸的数量
 
-        g.setColor(c);
+//        g.setColor(c);
 
         myTank.paint(g);//画出主坦克
         for (int i = 0; i < objects.size(); i++) {
@@ -85,6 +93,7 @@ public class GameModel implements Serializable{
         return myTank;
     }
 
+    //本地存储
     public void save(){
         File f =new File("D://Test//tank.data");
         ObjectOutputStream oos=null;
@@ -105,6 +114,7 @@ public class GameModel implements Serializable{
         }
     }
 
+    //加载本地数据
     public void load() {
         File f =new File("D://Test//tank.data");
         ObjectInputStream ois=null;

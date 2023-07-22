@@ -1,6 +1,9 @@
 package client.cor;
 
 import client.*;
+import client.net.Client;
+import client.net.TankDieMsg;
+import client.net.TankStopMsg;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +26,13 @@ public class BulletTankCollider implements Collider{
                 b.die();
                 int eX=t.getX()+Tank.WIDTH/2- Explode.WIDTH/2;
                 int eY=t.getY()+Tank.HEIGHT/2-Explode.HEIGHT/2;
-                new Explode(eX,eY,t.getGameModel());
+                new Explode(t.getId(),eX,eY,t.getGameModel());
+
+                //向服务器传送子弹打中坦克
+                Client.INSTANCE.send(new TankDieMsg(b.getId(),t.getId()));
+                //向服务器传送爆炸发生
+                Client.INSTANCE.send(new TankDieMsg(b.getId(),t.getId()));
+
                 return false;
             }
         } else if (o1 instanceof Tank && o2 instanceof Bullet){
