@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="完成了坦克的加入，移动，停下的netty部分">
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/net/BulletNewMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/net/ExplodeNewMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/net/TankDieMsg.java" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="在网络中添加了爆炸">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ConfirmDialogExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Explode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/TankFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/BulletTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/cor/BulletTankCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/MsgDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankDirChangeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/TankDirChangeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankJoinMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/TankJoinMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/DefaultFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/strategy/DefaultFireStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/strategy/FourDirFireStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankDieMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/TankDieMsg.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,25 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "full.screen.before.presentation.mode": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/angel/Desktop/java/javalearning/play1-netty",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/angel/Desktop/java/javalearning/play1-netty&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\angel\Desktop\java\javalearning\play1-netty\src\main\java\client\net" />
@@ -159,6 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConfirmDialogExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ConfirmDialogExample" />
+      <module name="play1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.Main" />
       <module name="play1" />
@@ -189,6 +188,7 @@
       <list>
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.ServerFrame" />
+        <item itemvalue="应用程序.ConfirmDialogExample" />
         <item itemvalue="应用程序.Client (1)" />
         <item itemvalue="应用程序.Client" />
       </list>
@@ -350,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689948112260</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="在网络中添加了爆炸">
+      <created>1690005162753</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1690005162753</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,7 +401,8 @@
     <MESSAGE value="增加了可以导出和导入数据程序" />
     <MESSAGE value="完成了基于maven的netty包导入" />
     <MESSAGE value="完成了坦克的加入，移动，停下的netty部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了坦克的加入，移动，停下的netty部分" />
+    <MESSAGE value="在网络中添加了爆炸" />
+    <option name="LAST_COMMIT_MESSAGE" value="在网络中添加了爆炸" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,10 +1,6 @@
 package client;
 
-import client.net.BulletNewMsg;
-import client.net.Client;
-
 import java.awt.*;
-import java.security.PublicKey;
 import java.util.UUID;
 
 /**
@@ -58,8 +54,6 @@ public class Bullet extends GameObject{
     public void setId(UUID id) {
         this.id = id;
     }
-
-
     public int getX(){
         return this.x;
     }

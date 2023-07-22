@@ -60,10 +60,15 @@ public class Client {
             group.shutdownGracefully();
         }
     }
-//    public void closeConnect(){
-//        //this.send("_bye_");
-//        //channel.close();
-//    }
+    public void closeConnect() {
+        channel.close().addListener((ChannelFutureListener) future -> {
+            EventLoopGroup group = future.channel().eventLoop().parent();
+            group.shutdownGracefully();
+            ServerFrame.INSTANCE.updateServerMsg(TankFrame.INSTANCE.getGm().getMainTank().getId().toString()+"client close");
+            System.out.println("Client closed.");
+        });
+    }
+
 
     public void send(Msg msg) {
         channel.writeAndFlush(msg);

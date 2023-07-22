@@ -16,10 +16,10 @@ import java.util.UUID;
  * Time: 22:16
  */
 public class TankDieMsg extends Msg{
-    UUID bulletId;//打死我的子弹
-    UUID id;
-    public TankDieMsg(UUID playerId,UUID id){
-        this.bulletId=playerId;
+    UUID bulletId;//打死我的子弹id
+    UUID id;//死掉坦克的id
+    public TankDieMsg(UUID bulletId,UUID id){
+        this.bulletId=bulletId;
         this.id=id;
     }
     public TankDieMsg(){}

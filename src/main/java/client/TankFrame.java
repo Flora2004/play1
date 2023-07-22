@@ -1,9 +1,6 @@
 package client;
 
-import client.net.Client;
-import client.net.TankDirChangeMsg;
-import client.net.TankStartMovingMsg;
-import client.net.TankStopMsg;
+import client.net.*;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -36,6 +33,7 @@ public class TankFrame extends Frame{
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                Client.INSTANCE.closeConnect();
                 System.exit(0);
             }
         });

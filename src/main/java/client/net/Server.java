@@ -57,6 +57,7 @@ class  ServerChildHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Server.clients.add(ctx.channel());
+        ServerFrame.INSTANCE.updateServerMsg("add new client"+ctx.channel());
     }
 
     @Override
