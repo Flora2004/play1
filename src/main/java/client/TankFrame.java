@@ -127,6 +127,7 @@ public class TankFrame extends Frame{
                 }
                 case KeyEvent.VK_CONTROL:{
                     gm.getMainTank().fire();
+
                     break;
                 }
                 case KeyEvent.VK_S:{
@@ -150,8 +151,6 @@ public class TankFrame extends Frame{
                 Client.INSTANCE.send(new TankStopMsg(myTank));
             }
             else {
-                myTank.setMoving(true);//坦克开始移动
-
                 //TODO:设置斜着走
                 if (bL)
                     myTank.setDir(Dir.LEFT);//设置方向
@@ -162,10 +161,13 @@ public class TankFrame extends Frame{
                 if (bD)
                     myTank.setDir(Dir.DOWN);
                 //发出坦克移动的消息
-                Client.INSTANCE.send(new TankStartMovingMsg(myTank));
+                if(!myTank.isMoving()) {
+                    Client.INSTANCE.send(new TankStartMovingMsg(myTank));
+                }
+                myTank.setMoving(true);//坦克开始移动
 
                 if(dir != myTank.getDir()) {
-                  //  Client.INSTANCE.send(new TankDirChangeMsg(myTank));
+                    Client.INSTANCE.send(new TankDirChangeMsg(myTank));
                 }
             }
         }

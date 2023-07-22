@@ -8,5 +8,5 @@ badTankX=50
 badTankY=200
 badTankSpace=70
 #fireStrategy
-goodFS=client.strategy.FourDirFireStrategy
+goodFS=client.strategy.DefaultFireStrategy
 badFS=client.strategy.DefaultFireStrategy

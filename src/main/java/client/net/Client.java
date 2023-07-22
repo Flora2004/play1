@@ -75,13 +75,15 @@ class ClientChannelInitializer extends ChannelInitializer<SocketChannel>{
         ch.pipeline()
                 .addLast(new MsgEncoder())//对传出的信息进行处理
                 .addLast(new MsgDecoder())//对传回的信息进行处理
-                .addLast(new ClientHandler());//对服务器传回的消息进行处理
+                .addLast(new ClientHandler())//对服务器传回的消息进行处理
+                .addLast(new ExceptionHandler()); // 添加异常处理器
     }
 }
 class  ClientHandler extends SimpleChannelInboundHandler<Msg>{//处理单一的数据类型
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Msg msg) throws Exception {
+        //TODO:处理异常的信息
         msg.handle();
 
     }
@@ -90,5 +92,13 @@ class  ClientHandler extends SimpleChannelInboundHandler<Msg>{//处理单一的�
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         //拿到主战坦克
         ctx.writeAndFlush(new TankJoinMsg(TankFrame.INSTANCE.getGm().getMainTank()));
+    }
+}
+class ExceptionHandler extends ChannelInboundHandlerAdapter {
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        // 在这里处理异常信息，例如记录日志、关闭连接等
+        cause.printStackTrace();
+        ctx.close(); // 关闭连接
     }
 }

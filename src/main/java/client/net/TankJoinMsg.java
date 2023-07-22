@@ -97,7 +97,6 @@ public class TankJoinMsg extends Msg{
     }
     @Override
     public void handle() {
-        //TODO:如何判断服务器的坦克是否添加到客户端
         if(this.id.equals(TankFrame.INSTANCE.getGm().getMainTank().getId())||//判断是否是同一个坦克
                 TankFrame.INSTANCE.getGm().findTankByUUID(this.id)!=null)return;//判断在客户端是否有服务器传来的坦克
         System.out.println(this);

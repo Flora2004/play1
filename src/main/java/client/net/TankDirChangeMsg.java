@@ -29,6 +29,7 @@ public class TankDirChangeMsg extends Msg{
     }
 
     public TankDirChangeMsg(Tank t){
+        super();
         this.id=t.getId();
         this.x=t.getX();
         this.y=t.getY();
@@ -65,9 +66,10 @@ public class TankDirChangeMsg extends Msg{
         Tank t=TankFrame.INSTANCE.getGm().findTankByUUID(this.id);
 
         if(t!=null){
-            t.setDir(dir);
-            t.setX(x);
-            t.setY(y);
+            t.setMoving(true);
+            t.setDir(this.dir);
+            t.setX(this.x);
+            t.setY(this.y);
         }
     }
 
@@ -141,5 +143,17 @@ public class TankDirChangeMsg extends Msg{
             }
         }
         return bytes;
+    }
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.getClass().getName())
+                .append("[")
+                .append("uuid=" + id + " | ")
+                .append("x=" + x + " | ")
+                .append("y=" + y + " | ")
+                .append("dir=" + dir + " | ")
+                .append("]");
+        return builder.toString();
     }
 }

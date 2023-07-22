@@ -183,14 +183,14 @@ public class Tank extends GameObject{
             default:
                 break;
         }
-
-        if(this.group==Group.BAD&&random.nextInt(100)>95) {
-            this.fire();
-        }
-
-        if(this.group==Group.BAD&&random.nextInt(100)>90) {
-            randomDir();
-        }
+        //人机坦克自动走位+射击
+//        if(this.group==Group.BAD&&random.nextInt(100)>95) {
+//            this.fire();
+//        }
+//
+//        if(this.group==Group.BAD&&random.nextInt(100)>90) {
+//            randomDir();
+//        }
 
         boundsCheck();//边界检测，让坦克在屏幕中移动
 
