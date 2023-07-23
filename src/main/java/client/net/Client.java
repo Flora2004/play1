@@ -19,7 +19,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 public class Client {
     public static final Client INSTANCE = new Client();
     private Channel channel=null;
-
+    private boolean isConnect=false;
+    private int waiting=0;
     private Client(){    }
     public void connect(){
         //创建group线程池,创建线程处理链接和读取
@@ -32,15 +33,20 @@ public class Client {
                     .channel(NioSocketChannel.class)//链接到服务器的NIO非阻塞版
                     .handler(new ClientChannelInitializer())//处理出现的特殊事件
                     //异步方法，无论有没有连接数都会执行下一行代码
-                    .connect("localhost",8888)
-                    ;
+                    .connect("localhost",8888);
 
             f.addListener(new ChannelFutureListener() {//判断客户端是否链接到服务器
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception {
                     if(!future.isSuccess()){
-                        System.out.println("not connected!");
+                        if(waiting<3){
+                            System.out.println("not connected!waiting");
+                            Thread.sleep(10000);
+                            Client.INSTANCE.connect();
+                            waiting++;
+                        }
                     }else {
+                        isConnect= true;
                         System.out.println("connected!");
                         //连接成功后初始化channel
                         channel=future.channel();
@@ -72,6 +78,10 @@ public class Client {
 
     public void send(Msg msg) {
         channel.writeAndFlush(msg);
+    }
+
+    public boolean isConnect() {
+        return isConnect;
     }
 }
 class ClientChannelInitializer extends ChannelInitializer<SocketChannel>{

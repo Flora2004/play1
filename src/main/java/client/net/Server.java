@@ -69,6 +69,7 @@ class  ServerChildHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
+        ServerFrame.INSTANCE.updateServerMsg("客户端传来的数据有误");
         //删除出现异常的客户端channel，并关闭链接
         Server.clients.remove(ctx.channel());
         ctx.close();

@@ -2,11 +2,9 @@ package client;
 
 import client.net.*;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,20 +18,30 @@ import java.util.List;
 public class TankFrame extends Frame{
     public static final TankFrame INSTANCE=new TankFrame();
     GameModel gm=new GameModel();
+    //判断游戏是否开始
     public static final int GAME_WIDTH=1080;
     public static final int GAME_HEIGHT=960;
 //    static final int GAME_WIDTH=Integer.parseInt((String) PropertyMgr.get("gameWidth"));//使用配置文件来改变
 //    static final int GAME_HEIGHT=Integer.parseInt((String) PropertyMgr.get("gameHeight"));//使用配置文件来改变
     private TankFrame(){
-        setSize(GAME_WIDTH,GAME_HEIGHT);//设置窗口大小
-        setResizable(false);//禁止调整窗口大小
-        setVisible(true);//使窗口可见
-        setTitle("tank war");
+        //设置名字
+        super("tank war");
+        //设置窗口大小
+        setSize(GAME_WIDTH,GAME_HEIGHT);
+        //设置窗口位置
+        setLocation(10,10);
+        //禁止调整窗口大小
+        setResizable(false);
+        //使窗口不可见
+        setVisible(false);
 
+        //设置窗口关闭
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                if(Client.INSTANCE.isConnect()){
                 Client.INSTANCE.closeConnect();
+                }
                 System.exit(0);
             }
         });
@@ -60,8 +68,9 @@ public class TankFrame extends Frame{
     }
     @Override
     public void paint(Graphics g){
-        gm.paint(g);
+            gm.paint(g);
     }
+
     class MyKeyListener extends KeyAdapter{
         //创建四个变量代表上下左右键是否被按下，根据按下的键控制坦克的移动方向
         boolean bL=false;

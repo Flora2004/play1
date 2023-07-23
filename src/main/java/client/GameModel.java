@@ -18,9 +18,8 @@ import java.util.List;
  * Time: 8:14
  */
 public class GameModel implements Serializable{
-    int gameWidth=1080,gameHeight=960;
     Random r=new Random();
-    Tank myTank=new Tank(r.nextInt(gameWidth),r.nextInt(gameHeight),Dir.values()[r.nextInt(4)],Group.GOOD,this);
+    Tank myTank=new Tank(r.nextInt(TankFrame.GAME_WIDTH),r.nextInt(TankFrame.GAME_HEIGHT),Dir.values()[r.nextInt(4)],Group.GOOD,this);
     ColliderChain chain=new ColliderChain();//碰撞的责任链
 
     private List<GameObject> objects=new ArrayList<>();//所有的物体
@@ -73,20 +72,19 @@ public class GameModel implements Serializable{
 //        g.drawString("爆炸的数量"+tanks.size(),10,90);//显示爆炸的数量
 
 //        g.setColor(c);
-
-        myTank.paint(g);//画出主坦克
-        for (int i = 0; i < objects.size(); i++) {
-            objects.get(i).paint(g);//画出物体
-        }
-
-        //互相碰撞
-        for (int i = 0; i < objects.size(); i++) {
-            for (int j = i+1; j < objects.size(); j++) {
-                GameObject o1=objects.get(i);
-                GameObject o2=objects.get(j);
-                chain.collide(o1,o2);
+            myTank.paint(g);//画出主坦克
+            for (int i = 0; i < objects.size(); i++) {
+                objects.get(i).paint(g);//画出物体
             }
-        }
+
+            //互相碰撞
+            for (int i = 0; i < objects.size(); i++) {
+                for (int j = i + 1; j < objects.size(); j++) {
+                    GameObject o1 = objects.get(i);
+                    GameObject o2 = objects.get(j);
+                    chain.collide(o1, o2);
+                }
+            }
     }
 
     public Tank getMainTank(){

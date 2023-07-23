@@ -1,10 +1,8 @@
 package client;
 
-import client.net.Client;
 import client.net.TankJoinMsg;
 import client.strategy.FireStrategy;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 import java.util.UUID;
@@ -17,9 +15,8 @@ import java.util.UUID;
  * Time: 14:42
  */
 public class Tank extends GameObject{
-    int oldX,oldY;
+    private int oldX,oldY;
     private Dir dir;
-
     private static final int SPEED=Integer.parseInt((String) PropertyMgr.get("tankSpeed"));
     public static int WIDTH=ResourceMgr.goodTankU.getWidth();
     public static int HEIGHT=ResourceMgr.goodTankU.getHeight();
@@ -29,10 +26,10 @@ public class Tank extends GameObject{
     private Random random=new Random();
     private boolean moving=false;
     private boolean living=true;
-    Group group=Group.BAD;
+    private Group group=Group.BAD;
     public Rectangle rect=new Rectangle();
-    GameModel gm;
-    FireStrategy fs;//开火模式
+    private GameModel gm;
+    private    FireStrategy fs;//开火模式
     public Tank(TankJoinMsg msg,GameModel gm) {
         this.x = msg.x;
         this.y = msg.y;
@@ -118,6 +115,15 @@ public class Tank extends GameObject{
     public void setMoving(boolean moving){
         this.moving=moving;
     }
+
+    public boolean isLiving() {
+        return living;
+    }
+
+    public void setLiving(boolean living) {
+        this.living = living;
+    }
+
     public GameModel getGameModel() {
         return gm;
     }
@@ -128,20 +134,19 @@ public class Tank extends GameObject{
         if(!living) {
             gm.remove(this);
             moving = false;
-//            confirmDialog();
 
             Color cc = g.getColor();
             g.setColor(Color.WHITE);
             g.drawRect(x, y, WIDTH, HEIGHT);
-            // 设置矩形的位置和大小
+
             int width = 200;
             int height = 100;
-            int x = gm.gameWidth/2-width/2;
-            int y = gm.gameHeight/2-height/2;
+            int x = TankFrame.GAME_WIDTH/2;
+            int y = TankFrame.GAME_HEIGHT/2;
 
             // 使用 Graphics 对象绘制矩形
             g.setColor(Color.WHITE); // 设置矩形的颜色为白色
-            g.fillRect(x, y, width, height); // 填充矩形
+            g.fillRect(0, 0, TankFrame.GAME_WIDTH,TankFrame.GAME_HEIGHT); // 填充矩形
             g.setColor(Color.RED);
             g.setFont(new Font("Arial",Font.BOLD,30));
             g.drawString("You lost!",x,y);
@@ -171,28 +176,7 @@ public class Tank extends GameObject{
 
         move();
     }
-    private void confirmDialog() {
-        int result = JOptionPane.showConfirmDialog(
-                null,
-                "Do you want to continue?",
-                "Confirmation",
-                JOptionPane.YES_NO_OPTION);
 
-        if (result == JOptionPane.YES_OPTION) {
-            System.out.println("User chose 'Yes'.");
-            Client.INSTANCE.closeConnect();
-
-            //TODO:添加重新开始一局
-        } else if (result == JOptionPane.NO_OPTION) {
-            System.out.println("User chose 'No'.");
-            Client.INSTANCE.closeConnect();
-            // 在这里添加需要执行的逻辑
-        } else if (result == JOptionPane.CLOSED_OPTION) {
-            System.out.println("User closed the dialog without making a choice.");
-            Client.INSTANCE.closeConnect();
-            // 在这里添加需要执行的逻辑
-        }
-    }
     private void move(){
         //记录移动之前的位置
         oldX=x;

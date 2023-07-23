@@ -6,9 +6,9 @@
  * Time: 15:15
  */
 import javax.swing.*;
+import java.util.Properties;
 
 public class ConfirmDialogExample {
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Confirmation Dialog Example");
