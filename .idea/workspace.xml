@@ -4,63 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="增加了登录界面，待完善死亡界面">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sun_mail_javax.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/activation-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.mail-1.6.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/Mail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/MovingMgr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankReliveMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/strategy/DefaultFireStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="成功分包，完成了爆炸同步，增加了登录界面，增加了邮件发送的功能，增加了日志的功能。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankExitMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/play1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConfirmDialogExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/Dir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Explode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/ImageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Mail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/PropertyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/PropertyMgr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/ResourceMgr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/BulletTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/BulletTankCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/BulletWallCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/BulletWallCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/Collider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/ColliderChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/ColliderChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/TankTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/HMTankTankCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/TankWallCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/TankWallCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/BulletNewMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/BulletNewMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/ExplodeNewMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/ExplodeNewMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/MsgDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/MsgEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/MsgType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/ServerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/ServerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankDieMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankDieMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankDirChangeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankDirChangeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankJoinMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankJoinMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankStartMovingMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankStartMovingMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankStopMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankStopMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/DefaultFireStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/FireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/strategy/FireStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/strategy/FourDirFireStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TankJoinMsgCodecTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TankStartMovingMsgCodecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/Enum/MsgType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/MsgType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/Mgr/MovingMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/MovingMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/cor/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/Collider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/cor/ColliderChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/ColliderChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/MsgDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/MsgDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankJoinMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankJoinMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankReliveMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankReliveMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tank/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +79,7 @@
     "full.screen.before.presentation.mode": "false",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "C:/Users/angel/Desktop/java/javalearning/play1-netty",
-    "project.structure.last.edited": "库",
+    "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "MavenSettings"
@@ -414,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690073180208</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="成功分包，完成了爆炸同步，增加了登录界面，增加了邮件发送的功能，增加了日志的功能。">
+      <created>1690113224310</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1690113224310</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +429,8 @@
     <MESSAGE value="在网络中添加了爆炸" />
     <MESSAGE value="完善了死亡判断" />
     <MESSAGE value="增加了登录界面，待完善死亡界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了登录界面，待完善死亡界面" />
+    <MESSAGE value="成功分包，完成了爆炸同步，增加了登录界面，增加了邮件发送的功能，增加了日志的功能。" />
+    <option name="LAST_COMMIT_MESSAGE" value="成功分包，完成了爆炸同步，增加了登录界面，增加了邮件发送的功能，增加了日志的功能。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

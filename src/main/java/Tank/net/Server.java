@@ -2,6 +2,7 @@ package Tank.net;
 
 import Tank.net.AllMsg.MsgDecoder;
 import Tank.net.AllMsg.MsgEncoder;
+import Tank.net.AllMsg.TankExitMsg;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.group.ChannelGroup;
@@ -10,6 +11,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.util.concurrent.GlobalEventExecutor;
+
+import java.net.SocketException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,6 +24,10 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 public class Server {
     //服务器生成UUID传给客户端，客户端再应用
     public static ChannelGroup clients=new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+    /**
+     * 启动服务器方法。
+     * 创建线程池并启动线程，监听客户端的连接，处理客户端的信息。
+     */
     public void serverStart(){
         EventLoopGroup bossGroup=new NioEventLoopGroup(1);//负责客户端的链接
         EventLoopGroup workerGroup=new NioEventLoopGroup(2);//负责处理每个客户端的信息
@@ -48,7 +55,7 @@ public class Server {
 
         }catch (InterruptedException e){
             e.printStackTrace();
-        }finally {
+        } finally {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
         }
@@ -70,9 +77,14 @@ class  ServerChildHandler extends ChannelInboundHandlerAdapter{
     }
 
     @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        Channel channel = ctx.channel();
+        Server.clients.remove(channel);
+    }
+
+    @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        cause.printStackTrace();
-        ServerFrame.INSTANCE.updateServerMsg("客户端传来的数据有误");
+        ServerFrame.INSTANCE.updateServerMsg(cause.getMessage());
         //删除出现异常的客户端channel，并关闭链接
         Server.clients.remove(ctx.channel());
         ctx.close();

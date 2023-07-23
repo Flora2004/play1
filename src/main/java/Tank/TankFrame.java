@@ -4,6 +4,7 @@ import Tank.Enum.Dir;
 import Tank.GameObject.Tank;
 import Tank.net.*;
 import Tank.net.AllMsg.TankDirChangeMsg;
+import Tank.net.AllMsg.TankExitMsg;
 import Tank.net.AllMsg.TankStartMovingMsg;
 import Tank.net.AllMsg.TankStopMsg;
 
@@ -44,14 +45,8 @@ public class TankFrame extends Frame{
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                if(TankFrame.INSTANCE.getGm().getMainTank().isLiving()){
-                    if(Client.INSTANCE.isConnect()){
-                        Client.INSTANCE.closeConnect();
-                    }
+                Client.INSTANCE.send(new TankExitMsg(gm.getMainTank()));
                     System.exit(0);
-                }else{
-
-                }
             }
         });
         this.addKeyListener(new MyKeyListener());

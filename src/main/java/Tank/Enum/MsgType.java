@@ -8,5 +8,5 @@ package Tank.Enum;
  * Time: 16:40
  */
 public enum MsgType {
-    TankJoin,TankDirChange,TankStop,TankStartMoving,BulletNew,TankDie,ExplodeNew,TankRelive
+    TankJoin,TankDirChange,TankStop,TankStartMoving,BulletNew,TankDie,ExplodeNew,TankRelive,TankExit
 }

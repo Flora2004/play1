@@ -23,11 +23,4 @@ public class MovingMgr {
         }
         return explodes[i];
     }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 16; i++) {
-            MovingMgr movingMgr=new MovingMgr();
-            movingMgr.out(i);
-        }
-    }
 }

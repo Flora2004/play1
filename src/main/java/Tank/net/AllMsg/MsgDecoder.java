@@ -72,6 +72,10 @@ public class MsgDecoder extends ByteToMessageDecoder {
                 msg = new TankReliveMsg();
                 break;
             }
+            case TankExit:{
+                msg=new TankExitMsg();
+                break;
+            }
             //添加其他case处理其他消息类型
             default:
                 break;

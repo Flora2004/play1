@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class GameModel implements Serializable{
     Random r=new Random();
-    Tank myTank=new Tank(r.nextInt(TankFrame.GAME_WIDTH),r.nextInt(TankFrame.GAME_HEIGHT), Dir.values()[r.nextInt(4)], Group.GOOD,this);
+    Tank myTank=new Tank(r.nextInt(TankFrame.GAME_WIDTH-50),r.nextInt(TankFrame.GAME_HEIGHT-50), Dir.values()[r.nextInt(4)], Group.GOOD,this);
     ColliderChain chain=new ColliderChain();//碰撞的责任链
 
     private List<GameObject> objects=new ArrayList<>();//所有的物体

@@ -12,5 +12,6 @@ import java.io.Serializable;
  * Time: 9:46
  */
 public interface Collider extends Serializable {
+    //返回一个boolean表示是否可以进行下一次碰撞
     boolean collide(GameObject o1, GameObject o2);
 }

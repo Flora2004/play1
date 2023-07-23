@@ -66,6 +66,20 @@ public class Tank extends GameObject {
         rect.height = HEIGHT;
     }
 
+    public Tank(TankExitMsg msg, GameModel gm) {
+        this.x = msg.x;
+        this.y = msg.y;
+        this.dir = msg.dir;
+        this.moving = msg.moving;
+        this.group = msg.group;
+        this.id = msg.id;
+        this.gm=gm;
+
+        rect.x = this.x;
+        rect.y = this.y;
+        rect.width = WIDTH;
+        rect.height = HEIGHT;
+    }
 
     public Tank(int x, int y, Dir dir, Group group, GameModel gm){
         super();
@@ -160,9 +174,9 @@ public class Tank extends GameObject {
             Color cc = g.getColor();
             g.setColor(Color.WHITE);
             g.drawRect(x, y, WIDTH, HEIGHT);
-//            g.setFont(new Font("仿宋",Font.BOLD,20));
-//            String str="还有 "+secondsRemaining+" 秒复活";
-//            g.drawString(str, TankFrame.GAME_WIDTH/2, TankFrame.GAME_HEIGHT/2);
+            g.setFont(new Font("仿宋",Font.BOLD,20));
+            String str="还有 "+secondsRemaining+" 秒复活";
+            g.drawString(str, TankFrame.GAME_WIDTH/2, TankFrame.GAME_HEIGHT/2);
             g.setColor(cc);
         }
         //name on head
@@ -262,23 +276,25 @@ public class Tank extends GameObject {
     public void die(){
         this.living=false;
         // 启动一个新线程来处理延迟和更新
-//        secondsRemaining=5;
-//        new Thread(() -> {
-//            try {
-//                while (secondsRemaining > 0) {
-//                    System.out.println("还有 " + secondsRemaining + " 秒坦克将复活。");
-//                    Thread.sleep(1000); // 等待 1 秒
-//                    secondsRemaining--;
-//                }
-//
-//                // 5 秒后，将 living 属性设置为 true，表示坦克已复活
-//                this.living = true;
-//                System.out.println("坦克已复活！");
-//                Client.INSTANCE.send(new TankReliveMsg());
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }).start();
+        secondsRemaining=5;
+        new Thread(() -> {
+            try {
+                while (secondsRemaining > 0) {
+                    System.out.println("还有 " + secondsRemaining + " 秒坦克将复活。");
+                    Thread.sleep(1000); // 等待 1 秒
+                    secondsRemaining--;
+                }
+
+                // 5 秒后，将 living 属性设置为 true，表示坦克已复活
+                this.living = true;
+                System.out.println("坦克已复活！");
+                if(this.living){
+                    Client.INSTANCE.send(new TankReliveMsg(this));
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     //坦克接触到墙就停下
@@ -286,5 +302,4 @@ public class Tank extends GameObject {
         x=oldX;
         y=oldY;
     }
-
 }

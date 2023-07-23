@@ -121,10 +121,6 @@ public class TankJoinMsg extends Msg {
     public void parse(byte[] bytes) {
         DataInputStream dis = new DataInputStream(new ByteArrayInputStream(bytes));
         try {
-            //TODO:先读TYPE信息，根据TYPE信息处理不同的消息
-            //略过消息类型
-            //dis.readInt();
-
             this.x = dis.readInt();
             this.y = dis.readInt();
             this.dir = Dir.values()[dis.readInt()];

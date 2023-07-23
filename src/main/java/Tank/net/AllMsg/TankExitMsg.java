@@ -1,9 +1,11 @@
 package Tank.net.AllMsg;
 
+import Tank.Enum.Dir;
+import Tank.Enum.Group;
+import Tank.Enum.MsgType;
 import Tank.GameObject.Tank;
 import Tank.TankFrame;
-import Tank.net.Client;
-import Tank.Enum.*;
+import Tank.net.ServerFrame;
 
 import java.io.*;
 import java.util.UUID;
@@ -13,18 +15,19 @@ import java.util.UUID;
  * Description:
  * User: angel
  * Date: 2023-07-23
- * Time: 16:31
+ * Time: 20:23
  */
-public class TankReliveMsg extends Msg {
-        public int x,y;
-        public Dir dir;
-        public boolean moving;
-        public Group group;
-        public UUID id;
-//    public String name;
-    public TankReliveMsg(){
+
+public class TankExitMsg extends Msg {
+    public int x,y;
+    public Dir dir;
+    public boolean moving;
+    public Group group;
+    public UUID id;
+    //    public String name;
+    public TankExitMsg(){
     }
-    public TankReliveMsg(int x, int y,Dir dir,boolean moving,Group group,UUID id){
+    public TankExitMsg(int x, int y,Dir dir,boolean moving,Group group,UUID id){
         super();
         this.x=x;
         this.y=y;
@@ -35,7 +38,7 @@ public class TankReliveMsg extends Msg {
 //        this.name=name;
     }
 
-    public TankReliveMsg(Tank t){
+    public TankExitMsg(Tank t){
         this.x= t.getX();
         this.y=t.getY();
         this.dir=t.getDir();
@@ -44,8 +47,8 @@ public class TankReliveMsg extends Msg {
         this.id=t.getId();
 //        this.name=t.getName();
     }
-        @Override
-        public byte[] toBytes(){
+    @Override
+    public byte[] toBytes(){
         ByteArrayOutputStream baos=null;//向字节数组中写
         DataOutputStream dos=null;//写数据
         byte[] bytes=null;
@@ -83,8 +86,8 @@ public class TankReliveMsg extends Msg {
         }
         return bytes;
     }
-        @Override
-        public String toString(){
+    @Override
+    public String toString(){
         StringBuilder builder=new StringBuilder();
         builder.append(this.getClass().getName())
                 .append("[")
@@ -98,26 +101,26 @@ public class TankReliveMsg extends Msg {
                 .append("]");
         return builder.toString();
     }
-        @Override
-        public void handle() {
-        //是自己的坦克信息则不处理
-        if(this.id.equals(TankFrame.INSTANCE.getGm().getMainTank().getId())
-                //坦克已经添加了则不处理
-                ||TankFrame.INSTANCE.getGm().findTankByUUID(this.id)!=null) {
+    @Override
+    public void handle() {
+        //是自己的坦克不处理
+        if(this.id.equals(TankFrame.INSTANCE.getGm().getMainTank().getId())||
+                //若没有要删除的坦克则不处理
+                TankFrame.INSTANCE.getGm().findTankByUUID(this.id)==null) {
             return;
         }
-        Tank t=new Tank(this,TankFrame.INSTANCE.getGm());
-        TankFrame.INSTANCE.getGm().add(t);
-
+        Tank t=new Tank(this, TankFrame.INSTANCE.getGm());
+        TankFrame.INSTANCE.getGm().remove(t);
+        ServerFrame.INSTANCE.updateServerMsg("delete");
     }
 
-        @Override
-        public MsgType getMsgType() {
-        return MsgType.TankRelive;
+    @Override
+    public MsgType getMsgType() {
+        return MsgType.TankExit;
     }
 
-        @Override
-        public void parse(byte[] bytes) {
+    @Override
+    public void parse(byte[] bytes) {
         DataInputStream dis = new DataInputStream(new ByteArrayInputStream(bytes));
         try {
             //TODO:先读TYPE信息，根据TYPE信息处理不同的消息
@@ -142,3 +145,4 @@ public class TankReliveMsg extends Msg {
         }
     }
 }
+

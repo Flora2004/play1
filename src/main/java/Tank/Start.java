@@ -28,13 +28,13 @@ public class Start extends JFrame {
 
     public static void main(String[] args) {
        Start start =new Start();
-           start.launch();
+
         new Thread(() -> new Audio("audio//war1.wav").loop()).start();
 
     }
 
     //窗口的启动方法
-    public void launch(){
+    public Start(){
 
         //标题
         setTitle("tank war");
@@ -104,11 +104,11 @@ public class Start extends JFrame {
                 changeVision();
 
                 //向玩家邮箱发送登录提示
-//                try {
-//                    Mail mail = new Mail();
-//                }catch (Exception ex){
-//                    ex.printStackTrace();
-//                }
+                try {
+                    Mail mail = new Mail();
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
 
                 //开启坦克大战
                 TankFrame tankFrame = TankFrame.INSTANCE;
@@ -134,7 +134,12 @@ public class Start extends JFrame {
                         }).start();
 
                         //connect to the server
-                        Client.INSTANCE.connect();
+                        try {
+
+                            Client.INSTANCE.connect();
+                        }catch (Exception e){
+                            System.out.println("fail to connect");
+                        }
                         try {
                             Thread.sleep(10);
                         } catch (InterruptedException e) {
