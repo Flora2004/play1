@@ -4,25 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="完善了死亡判断">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_activation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_mail_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/activation-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.mail-api-1.6.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/GameFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/Mail.java" afterDir="false" />
+    <list default="true" id="aebead46-bb47-4507-a2b7-c685260b3427" name="变更" comment="增加了登录界面，待完善死亡界面">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sun_mail_javax.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/activation-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.mail-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/Mail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/MovingMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankReliveMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tank/strategy/DefaultFireStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/play1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/play1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConfirmDialogExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfirmDialogExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/TankFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/ServerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/net/ServerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConfirmDialogExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Dir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/Dir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Explode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Mail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/PropertyMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/PropertyMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/ResourceMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Mgr/ResourceMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Tank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/GameObject/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/BulletTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/BulletTankCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/BulletWallCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/BulletWallCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/Collider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/ColliderChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/ColliderChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/TankTankCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/HMTankTankCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/cor/TankWallCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/cor/TankWallCollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/BulletNewMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/BulletNewMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/ExplodeNewMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/ExplodeNewMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/Msg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/MsgDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/MsgEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/MsgType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/Enum/MsgType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/ServerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/ServerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankDieMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankDieMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankDirChangeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankDirChangeMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankJoinMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankJoinMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankStartMovingMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankStartMovingMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/net/TankStopMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/net/AllMsg/TankStopMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/DefaultFireStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/FireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/strategy/FireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/strategy/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tank/strategy/FourDirFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TankJoinMsgCodecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TankStartMovingMsgCodecTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,25 +104,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/angel/Desktop/java/javalearning/play1-netty&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;库&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/angel/Desktop/java/javalearning/play1-netty",
+    "project.structure.last.edited": "库",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\angel\Desktop\java\javalearning\play1-netty\src\main\java\client\net" />
@@ -97,40 +136,22 @@
       <recent name="C:\Users\angel\Desktop\java\javalearning\play1\src" />
       <recent name="C:\Users\angel\Desktop\java\javalearning\play1\src\client" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="client.net" />
       <recent name="client.cor" />
       <recent name="client" />
-      <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.GameFrame">
-    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.net.Client" />
-      <module name="play1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="client.net.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.net.Client" />
-      <module name="play1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="client.net.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="应用程序.Start">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.net.Client" />
       <module name="play1" />
@@ -147,19 +168,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfirmDialogExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ConfirmDialogExample" />
+    <configuration name="Log4jTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Log4jTest" />
       <module name="play1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameFrame" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.GameFrame" />
+    <configuration name="MovingMgr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tank.Mgr.MovingMgr" />
       <module name="play1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="client.*" />
+          <option name="PATTERN" value="Tank.Mgr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReGameFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tank.ReGameFrame" />
+      <module name="play1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tank.Enum.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,11 +202,11 @@
       </method>
     </configuration>
     <configuration name="ServerFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.net.ServerFrame" />
+      <option name="MAIN_CLASS_NAME" value="Tank.net.ServerFrame" />
       <module name="play1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="client.net.*" />
+          <option name="PATTERN" value="Tank.net.AllMsg.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -181,11 +215,11 @@
       </method>
     </configuration>
     <configuration name="Start" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.Start" />
+      <option name="MAIN_CLASS_NAME" value="Tank.Start" />
       <module name="play1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="client.*" />
+          <option name="PATTERN" value="Tank.Enum.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,11 +229,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.GameFrame" />
-        <item itemvalue="应用程序.ServerFrame" />
         <item itemvalue="应用程序.Start" />
-        <item itemvalue="应用程序.ConfirmDialogExample" />
-        <item itemvalue="应用程序.Client (1)" />
+        <item itemvalue="应用程序.ServerFrame" />
+        <item itemvalue="应用程序.MovingMgr" />
+        <item itemvalue="应用程序.ReGameFrame" />
+        <item itemvalue="应用程序.Log4jTest" />
       </list>
     </recent_temporary>
   </component>
@@ -373,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690012384497</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="增加了登录界面，待完善死亡界面">
+      <created>1690073180208</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1690073180208</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,17 +460,35 @@
     <MESSAGE value="完成了坦克的加入，移动，停下的netty部分" />
     <MESSAGE value="在网络中添加了爆炸" />
     <MESSAGE value="完善了死亡判断" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了死亡判断" />
+    <MESSAGE value="增加了登录界面，待完善死亡界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了登录界面，待完善死亡界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <breakpoint enabled="true" type="java-exception">
+          <dependency id="0" />
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.EOFException" package="java.io" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <dependency master-id="0" />
+          <properties class="java.net.ConnectException" package="java.net" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this" />
+        <watch expression="this" />
+        <watch expression="file" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

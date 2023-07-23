@@ -8,5 +8,11 @@ badTankX=50
 badTankY=200
 badTankSpace=70
 #fireStrategy
-goodFS=client.strategy.DefaultFireStrategy
-badFS=client.strategy.DefaultFireStrategy
+goodFS=Tank.strategy.DefaultFireStrategy
+badFS=Tank.strategy.DefaultFireStrategy
+#Mail
+myEmailAccount=17326838767@163.com
+myEmailPassword=SEWUXUKLIPAKCKDG
+myEmailSMTPHost=smtp.163.com
+receiveMailAccount=1955855131@qq.com
+#SEWUXUKLIPAKCKDG
